@@ -3,22 +3,33 @@
 
 {{ define "main" }}
 
-  {{ if .Site.Params.showAuthorOnHomepage }}
-    {{ partial "author-large.html" . }}
-  {{ end }}
+{{ if .Site.Params.showAuthorOnHomepage }}
+{{ partial "author-large.html" . }}
+{{ end }}
 
-  <div class="intro">
-    <h1>{{ .Title }}{{ if .Site.Params.addDot }}<span class="dot">.</span>{{ end }}</h1>
-    <div class="intro-content">{{ .Content }}</div>
-  </div>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Nunito:wght@500;800&display=swap"
+  rel="stylesheet">
 
-  {{ if .Site.Params.showPostsOnHomepage }}
-  {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") }}
-    {{ range $paginator.Pages }}
-      {{ .Render "summary" }}
-    {{ end }}
-    {{ template "_internal/pagination.html" . }}
-  {{ end }}
+<div class="intro">
+  <h4>Coming Soon</h4>
+  <h1 style="font-family: 'Bungee Shade', cursive;
+">{{ .Title }}{{ if .Site.Params.addDot }}<span class="dot">.</span>{{
+    end
+    }}</h1>
+  <div class="intro-content">{{ .Content }}</div>
+  <h3 style="color:#4EDE77h;">The easiest place to find and post local jobs.</h3>
+</div>
+
+{{ if .Site.Params.showPostsOnHomepage }}
+{{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") }}
+{{ range $paginator.Pages }}
+{{ .Render "summary" }}
+{{ end }}
+{{ template "_internal/pagination.html" . }}
+{{ end }}
 
 {{ end }}
 
