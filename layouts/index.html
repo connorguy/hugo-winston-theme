@@ -9,9 +9,11 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Nunito:wght@500;800&display=swap"
   rel="stylesheet">
+
+
 
 <div class="intro">
   <h4>Coming Soon</h4>
@@ -20,7 +22,55 @@
     end
     }}</h1>
   <div class="intro-content">{{ .Content }}</div>
-  <!-- <h3 style="color:#4EDE77h;">The easiest place to find and post local jobs.</h3> -->
+  <!-- <h3 style="color:#4EDE77H;">The easiest place to find and post local jobs.</h3> -->
+
+
+  <style>
+    /* I'm not sure how to just put this in a css file and have it picked up, so... */
+    html,
+    body {
+      height: 100%;
+    }
+
+    .wrap {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .button {
+      width: max-content;
+      height: 45px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 800;
+      color: #000;
+      background-color: rgba(254, 254, 254, 0.4);
+      border: none;
+      border-radius: 6px;
+      box-shadow: 0px 6px 30px rgba(78, 222, 119);
+      transition: all 0.3s ease 0s;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .button:hover {
+      background-color: #4EDE77;
+      box-shadow: 0px 5px 20px rgba(46, 29, 157, 0.4);
+      color: #fff;
+      transform: translateY(-7px);
+    }
+  </style>
+
+  <button class="button" data-tf-slider="rb8XQFTb" data-tf-width="680"
+    data-tf-iframe-props="title=Local Business Hiring Practices" data-tf-medium="snippet">Share
+    how you hire!</button>
+  <script src="//embed.typeform.com/next/embed.js"></script>
+
+
 </div>
 
 {{ if .Site.Params.showPostsOnHomepage }}
